@@ -1,1 +1,18 @@
-<p>regex-tester works!</p>
+<div>
+  <label>
+    Regex, unterstützte Sonderzeichen sind ., *, (, ), +, [, ]
+    <input [(ngModel)]="regexString" (change)="resetValidationResult()" type="text"/>
+  </label>
+</div>
+<div>
+  <label>
+    Zu prüfender String
+    <input [(ngModel)]="stringToValidate" (change)="resetValidationResult()" type="text"/>
+  </label>
+</div>
+<div>
+  <button type="submit" (click)="validteInputAgainstRegex()">Prüfen</button>
+  <p>
+    {{ this.getValidationMessage() }}
+  </p>
+</div>
