@@ -1,0 +1,9 @@
+{
+  "/api": {
+    "target": "https://compiler-application-server.herokuapp.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
