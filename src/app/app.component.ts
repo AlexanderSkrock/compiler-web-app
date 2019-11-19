@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import {Entry} from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'compiler-web-app';
+  title = 'Studienproject Compilerbau';
+  entries = [
+    new Entry('', 'Startseite'),
+    new Entry('/regex', 'Regexes'),
+    new Entry('/scanner', 'Scanner'),
+  ];
 }
