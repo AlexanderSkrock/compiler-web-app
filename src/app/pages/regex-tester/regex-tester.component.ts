@@ -17,7 +17,7 @@ export class RegexTesterComponent implements OnInit {
   ngOnInit() {
   }
 
-  validteInputAgainstRegex() {
+  validateInputAgainstRegex() {
     this.regexService
       .testRegex(this.regexString, this.stringToValidate)
       .subscribe(result => {
