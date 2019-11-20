@@ -11,4 +11,5 @@ var apiProxy = proxy('/api/', {
     target: 'https://compiler-application-server.herokuapp.com/'
 });
 app.use(apiProxy);
+app.use(express.json());
 app.listen(process.env.PORT || 8080);
