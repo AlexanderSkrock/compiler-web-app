@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+.standard-padding {
+  padding: 10px;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.navbar-entry {
+  padding: 0 10px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+html, body, app-root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.mainContainer {
+  height: 100%;
+  width: 100%;
+  padding: 120px 20px 0;
+}
+
+.standard-margin {
+  margin: 10px;
+}
+
+body {
+  background: url('assets/background.svg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

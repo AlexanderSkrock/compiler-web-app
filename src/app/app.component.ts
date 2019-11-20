@@ -6,7 +6,7 @@ import {Entry} from './components/navbar/navbar.component';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'Studienproject Compilerbau';
+  title = 'Studienprojekt Compilerbau';
   entries = [
     new Entry('', 'Startseite'),
     new Entry('/regex', 'Regexes'),
