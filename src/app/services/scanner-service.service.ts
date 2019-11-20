@@ -12,8 +12,8 @@ export class ScannerServiceService {
 
   public scanString(tokens: object, stringToTest: string): Observable<object> {
     return this.http.post(`${this.apiUrl}/scan`, {
-      tokens,
-      string: stringToTest
+      tokens: tokens || {},
+      string: stringToTest || '',
     });
   }
 }

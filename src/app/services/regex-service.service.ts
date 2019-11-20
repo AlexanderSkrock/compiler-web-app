@@ -13,8 +13,8 @@ export class RegexServiceService {
   public testRegex(regex: string, stringToTest: string): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/test`,
       {
-        regex,
-        stringToValidate: stringToTest,
+        regex: regex || '',
+        stringToValidate: stringToTest || '',
     });
   }
 }
