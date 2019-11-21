@@ -10,10 +10,12 @@ export class ScannerServiceService {
 
   constructor(private http: HttpClient) { }
 
-  public scanString(tokens: object, stringToTest: string): Observable<object> {
-    return this.http.post(`${this.apiUrl}/scan`, {
-      tokens: tokens || {},
-      string: stringToTest || '',
+  public scanString(tokens: any[], stringToTest: string): Observable<any[]> {
+    const tokenDefinitions = {};
+    (tokens || []).forEach(token => tokenDefinitions[token.type] = token.regex);
+    return this.http.post<any[]>(`${this.apiUrl}/scan`, {
+      tokenDefinitions: tokenDefinitions || {},
+      inputString: stringToTest || '',
     });
   }
 }
