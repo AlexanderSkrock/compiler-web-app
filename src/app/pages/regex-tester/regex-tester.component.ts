@@ -9,6 +9,7 @@ import {RegexServiceService} from '../../services/regex-service.service';
 export class RegexTesterComponent implements OnInit {
   regexString: string;
   stringToValidate: string;
+  stringsToValidate: string;
   validationResult = undefined;
 
   constructor(private changeDetector: ChangeDetectorRef, private regexService: RegexServiceService) {}
@@ -16,7 +17,7 @@ export class RegexTesterComponent implements OnInit {
   ngOnInit() {
   }
 
-  validteInputAgainstRegex() {
+  validateInputAgainstRegex() {
     this.regexService
       .testRegex(this.regexString, this.stringToValidate)
       .subscribe(result => {
@@ -34,6 +35,16 @@ export class RegexTesterComponent implements OnInit {
       return 'Ergebnis: Die Eingabe erfüllt die Regex!';
     } else if (this.validationResult === false) {
       return 'Ergebnis: Die Eingabe erfüllt die Regex nicht!';
+    } else {
+      return '';
+    }
+  }
+
+  getFormattingForValidationState() {
+    if (this.validationResult === true) {
+      return 'text-success border-success';
+    } else if (this.validationResult === false) {
+      return 'text-danger border-danger';
     } else {
       return '';
     }

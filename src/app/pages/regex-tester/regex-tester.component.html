@@ -1,18 +1,39 @@
-<div>
-  <label>
-    Regex, unterstützte Sonderzeichen sind ., *, (, ), +, [, ]
-    <input [(ngModel)]="regexString" (change)="resetValidationResult()" type="text"/>
-  </label>
-</div>
-<div>
-  <label>
-    Zu prüfender String
-    <input [(ngModel)]="stringToValidate" (change)="resetValidationResult()" type="text"/>
-  </label>
-</div>
-<div>
-  <button type="submit" (click)="validteInputAgainstRegex()">Prüfen</button>
-  <p>
-    {{ this.getValidationMessage() }}
-  </p>
+<div class="col">
+  <div class="row">
+    Unterstützte Regex-Syntax:
+    <ul>
+      <li>x|y := x oder y</li>
+      <li>[x-y] := alle Zeichen im Bereich vom Zeichen von x bis y (Reihenfolge entspricht dem Unicode)</li>
+      <li>x+ := x muss einmal oder mehrmals auftreten</li>
+      <li>x* := x  kann beliebig oft auftreten (inkl. 0)</li>
+      <li>(x) := Zusammenfassung eines beliebigen Teils als Gruppe</li>
+    </ul>
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-6">
+      <div class="row">
+        <div><label>
+          Regex
+          <input [(ngModel)]="regexString" (change)="resetValidationResult()" type="text"/>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div>
+        <label>
+          Eingabe
+          <input [className]="getFormattingForValidationState()" [(ngModel)]="stringToValidate" (change)="resetValidationResult()" type="text"/>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <button type="submit" (click)="validateInputAgainstRegex()">Prüfen</button>
+  </div>
+  <div class="row justify-content-center">
+    <p>
+      {{ this.getValidationMessage() }}
+    </p>
+  </div>
 </div>
