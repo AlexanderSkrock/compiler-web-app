@@ -8,9 +8,9 @@ import {log} from 'util';
   styleUrls: ['./scanner.component.css']
 })
 export class ScannerComponent implements OnInit {
-  private textToScan: string;
-  private tokenDefinitionText: string;
-  private scanResult = '';
+  textToScan: string;
+  tokenDefinitionText: string;
+  scanResult = '';
 
   private static buildTokenDefinitions(tokenDefinitionText: string): any {
     return tokenDefinitionText.split('\n').map(tokenDefinition => {
